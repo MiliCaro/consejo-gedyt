@@ -1,0 +1,977 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Convocatoria al Consejo de Administración · Fundación GEDYT</title>
+<meta name="description" content="Fundación GEDYT convoca a personas con trayectoria, redes y compromiso para integrar su Consejo de Administración. Convocatoria abierta 2026.">
+
+<!-- ══════════════════════════════════════════════════════════════
+     GOOGLE FONTS · Inter
+     ══════════════════════════════════════════════════════════════ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ══════════════════════════════════════════════════════════════
+   VARIABLES & RESET
+   ══════════════════════════════════════════════════════════════ */
+:root{
+  --magenta:#8B1A4A;
+  --magenta-dark:#6E1239;      /* hover -10% aprox */
+  --azul-oscuro:#003366;
+  --azul-gedyt:#3AAEDC;
+  --blanco:#FFFFFF;
+  --gris-claro:#F4F6F7;
+  --gris-borde:#E3E8EB;
+  --texto:#1B2B36;
+  --texto-suave:#5A6B76;
+  --sombra:0 4px 24px rgba(0,0,0,0.08);
+  --sombra-hover:0 12px 40px rgba(0,0,0,0.14);
+  --radio:16px;
+  --radio-cta:8px;
+  --max:1200px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  color:var(--texto);
+  background:var(--blanco);
+  line-height:1.6;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* ── Utilidades de layout ── */
+.container{width:100%;max-width:var(--max);margin:0 auto;padding:0 24px}
+.section{padding:88px 0}
+.section--gris{background:var(--gris-claro)}
+.eyebrow{
+  display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--magenta);margin-bottom:18px;
+}
+.section-title{
+  font-size:clamp(1.8rem,4vw,2.7rem);font-weight:800;line-height:1.15;
+  letter-spacing:-.02em;color:var(--azul-oscuro);max-width:900px;
+}
+.section-sub{
+  font-size:1.08rem;color:var(--texto-suave);margin-top:18px;max-width:720px;font-weight:400;
+}
+.accent-line{width:64px;height:4px;background:var(--magenta);border-radius:4px;margin-bottom:26px}
+
+/* ══════════════════════════════════════════════════════════════
+   ANIMACIÓN DE ENTRADA (IntersectionObserver)
+   ══════════════════════════════════════════════════════════════ */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
+
+/* ── Botones / CTA ── */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  background:var(--magenta);color:var(--blanco);font-weight:600;font-size:1rem;
+  padding:16px 34px;border-radius:var(--radio-cta);border:none;cursor:pointer;
+  transition:background .25s ease,transform .25s ease,box-shadow .25s ease;
+  box-shadow:0 6px 20px rgba(139,26,74,.28);
+}
+.btn:hover{background:var(--magenta-dark);transform:translateY(-2px);box-shadow:0 10px 28px rgba(139,26,74,.34)}
+.btn:active{transform:translateY(0)}
+
+/* ══════════════════════════════════════════════════════════════
+   SECCIÓN 1 · HERO
+   ══════════════════════════════════════════════════════════════ */
+.hero{
+  position:relative;min-height:92vh;display:flex;align-items:center;
+  color:var(--blanco);overflow:hidden;
+  background:linear-gradient(125deg,var(--azul-oscuro) 0%,#3a1140 55%,var(--magenta) 100%);
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 78% 22%,rgba(58,174,220,.20),transparent 45%),
+    radial-gradient(circle at 12% 85%,rgba(139,26,74,.35),transparent 50%);
+  pointer-events:none;
+}
+.hero::after{ /* overlay oscurecedor sutil para legibilidad */
+  content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,20,40,.15),rgba(0,10,25,.35));
+  pointer-events:none;
+}
+.hero .container{position:relative;z-index:2;padding-top:80px;padding-bottom:80px}
+.hero .eyebrow{color:#f0c4d5}
+.hero h1{
+  font-size:clamp(2.4rem,6.2vw,4.4rem);font-weight:800;line-height:1.05;
+  letter-spacing:-.03em;max-width:900px;
+}
+.hero .subtitle{
+  font-size:clamp(1.05rem,2.2vw,1.35rem);font-weight:400;color:rgba(255,255,255,.9);
+  margin-top:26px;max-width:640px;line-height:1.55;
+}
+.hero .cta-row{margin-top:40px}
+.hero-note{
+  display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;
+  margin-top:40px;padding-top:26px;border-top:1px solid rgba(255,255,255,.18);
+  font-size:.92rem;color:rgba(255,255,255,.82);max-width:720px;
+}
+.hero-note span{display:inline-flex;align-items:center;gap:9px}
+.hero-note .dot{width:6px;height:6px;border-radius:50%;background:var(--azul-gedyt);flex-shrink:0}
+
+/* Scroll hint */
+.scroll-hint{
+  position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;
+  font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.6);
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+}
+.scroll-hint .arrow{width:1px;height:30px;background:linear-gradient(rgba(255,255,255,.6),transparent);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:.3}50%{opacity:1}}
+
+/* ══════════════════════════════════════════════════════════════
+   SECCIÓN 2 · POR QUÉ IMPORTA
+   ══════════════════════════════════════════════════════════════ */
+.stats-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:48px 0 40px;
+}
+.stat-card{
+  background:var(--blanco);border-radius:var(--radio);padding:38px 30px;box-shadow:var(--sombra);
+  border:1px solid var(--gris-borde);text-align:left;
+  transition:transform .3s ease,box-shadow .3s ease;
+}
+.stat-card:hover{transform:translateY(-4px);box-shadow:var(--sombra-hover)}
+.stat-card .num{
+  font-size:2.7rem;font-weight:800;letter-spacing:-.02em;
+  background:linear-gradient(120deg,var(--magenta),var(--azul-oscuro));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  line-height:1;
+}
+.stat-card .lbl{margin-top:12px;color:var(--texto-suave);font-weight:500;font-size:1rem}
+.lead-p{font-size:1.12rem;color:var(--texto);max-width:820px;line-height:1.7}
+
+/* ══════════════════════════════════════════════════════════════
+   SECCIÓN 3 · EL ROL
+   ══════════════════════════════════════════════════════════════ */
+.role-desc{font-size:1.12rem;color:var(--texto-suave);max-width:820px;margin-top:20px;line-height:1.7}
+.expect-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px}
+.expect-card{
+  background:var(--blanco);border-radius:var(--radio);padding:32px 28px;box-shadow:var(--sombra);
+  border:1px solid var(--gris-borde);border-top:4px solid var(--magenta);
+  transition:transform .3s ease,box-shadow .3s ease;
+}
+.expect-card:hover{transform:translateY(-4px);box-shadow:var(--sombra-hover)}
+.expect-card h3{font-size:1.12rem;font-weight:700;color:var(--azul-oscuro);margin-bottom:10px}
+.expect-card p{font-size:.96rem;color:var(--texto-suave)}
+
+.conditions{
+  margin-top:48px;background:linear-gradient(135deg,var(--azul-oscuro),#062a52);
+  border-radius:var(--radio);padding:44px 40px;color:var(--blanco);box-shadow:var(--sombra);
+}
+.conditions h3{font-size:1.35rem;font-weight:700;margin-bottom:24px}
+.conditions ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:16px 40px}
+.conditions li{display:flex;gap:14px;align-items:flex-start;font-size:1rem;color:rgba(255,255,255,.92)}
+.conditions .check{
+  flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--magenta);
+  display:flex;align-items:center;justify-content:center;font-size:.75rem;color:#fff;margin-top:2px;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   SECCIÓN 4 · PERFILES BUSCADOS
+   ══════════════════════════════════════════════════════════════ */
+.profile-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.profile-card{
+  background:var(--blanco);border-radius:var(--radio);padding:34px 30px;box-shadow:var(--sombra);
+  border:1px solid var(--gris-borde);position:relative;overflow:hidden;
+  transition:transform .3s ease,box-shadow .3s ease;
+}
+.profile-card::before{
+  content:"";position:absolute;top:0;left:0;width:100%;height:100%;
+  background:radial-gradient(circle at 100% 0,rgba(139,26,74,.06),transparent 40%);pointer-events:none;
+}
+.profile-card:hover{transform:translateY(-4px);box-shadow:var(--sombra-hover)}
+.profile-card .ico{
+  width:48px;height:48px;border-radius:12px;margin-bottom:18px;
+  background:linear-gradient(135deg,rgba(139,26,74,.12),rgba(58,174,220,.12));
+  display:flex;align-items:center;justify-content:center;font-size:1.4rem;
+}
+.profile-card h3{font-size:1.14rem;font-weight:700;color:var(--azul-oscuro);margin-bottom:10px}
+.profile-card p{font-size:.96rem;color:var(--texto-suave)}
+
+/* ══════════════════════════════════════════════════════════════
+   SECCIÓN 5 · COMPETENCIAS
+   ══════════════════════════════════════════════════════════════ */
+.comp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:48px}
+.comp-card{
+  background:var(--blanco);border-radius:14px;padding:24px 26px;box-shadow:var(--sombra);
+  border:1px solid var(--gris-borde);display:flex;gap:20px;align-items:flex-start;
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+.comp-card:hover{transform:translateY(-3px);box-shadow:var(--sombra-hover)}
+.comp-card .cnum{
+  font-size:1.5rem;font-weight:800;color:var(--magenta);line-height:1;flex-shrink:0;
+  min-width:42px;
+}
+.comp-card h4{font-size:1.02rem;font-weight:700;color:var(--azul-oscuro);margin-bottom:5px}
+.comp-card p{font-size:.9rem;color:var(--texto-suave)}
+
+/* ══════════════════════════════════════════════════════════════
+   SECCIÓN 6 · PROCESO (TIMELINE)
+   ══════════════════════════════════════════════════════════════ */
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:56px;position:relative}
+.tl-step{position:relative;padding:0 22px;text-align:center}
+.tl-step .tl-line{
+  position:absolute;top:22px;left:50%;width:100%;height:3px;
+  background:linear-gradient(90deg,var(--magenta),rgba(139,26,74,.25));z-index:0;
+}
+.tl-step:last-child .tl-line{display:none}
+.tl-num{
+  position:relative;z-index:1;width:46px;height:46px;border-radius:50%;margin:0 auto 22px;
+  background:var(--magenta);color:#fff;font-weight:700;font-size:1.15rem;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 18px rgba(139,26,74,.3);border:4px solid var(--blanco);
+}
+.tl-step h4{font-size:1.05rem;font-weight:700;color:var(--azul-oscuro);margin-bottom:8px}
+.tl-step .tl-date{font-size:.9rem;color:var(--magenta);font-weight:600}
+
+/* ══════════════════════════════════════════════════════════════
+   SECCIÓN 7 · FORMULARIO
+   ══════════════════════════════════════════════════════════════ */
+.form-wrap{
+  max-width:820px;margin:52px auto 0;background:var(--blanco);border-radius:var(--radio);
+  box-shadow:var(--sombra);border:1px solid var(--gris-borde);padding:48px 44px;
+}
+.form-block{margin-bottom:40px}
+.form-block:last-of-type{margin-bottom:0}
+.form-block-title{
+  font-size:.82rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--magenta);margin-bottom:22px;padding-bottom:12px;border-bottom:1px solid var(--gris-borde);
+}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.field{margin-bottom:22px}
+.field:last-child{margin-bottom:0}
+.field label{display:block;font-size:.9rem;font-weight:600;color:var(--texto);margin-bottom:8px}
+.field label .req{color:var(--magenta)}
+.field input[type=text],
+.field input[type=email],
+.field input[type=tel],
+.field textarea,
+.field select{
+  width:100%;font-family:inherit;font-size:.98rem;color:var(--texto);
+  padding:13px 15px;border:1.5px solid var(--gris-borde);border-radius:10px;
+  background:var(--blanco);transition:border-color .2s ease,box-shadow .2s ease;
+}
+.field input:focus,.field textarea:focus,.field select:focus{
+  outline:none;border-color:var(--magenta);box-shadow:0 0 0 3px rgba(139,26,74,.12);
+}
+.field textarea{resize:vertical;min-height:130px;line-height:1.6}
+
+/* Select estilizado (sin default del browser) */
+.field select{
+  appearance:none;-webkit-appearance:none;-moz-appearance:none;cursor:pointer;
+  background-image:url("data:image/svg+xml;charset=UTF-8,%3Csvg width='12' height='8' viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238B1A4A' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 15px center;padding-right:42px;
+}
+
+/* Upload de archivo */
+.file-drop{
+  border:1.5px dashed var(--gris-borde);border-radius:10px;padding:26px;text-align:center;
+  cursor:pointer;transition:border-color .2s ease,background .2s ease;background:var(--gris-claro);
+}
+.file-drop:hover{border-color:var(--magenta);background:#fbf5f8}
+.file-drop input[type=file]{display:none}
+.file-drop .fd-icon{font-size:1.6rem;margin-bottom:8px}
+.file-drop .fd-text{font-size:.94rem;color:var(--texto-suave)}
+.file-drop .fd-text strong{color:var(--magenta)}
+.file-drop .fd-name{margin-top:10px;font-size:.9rem;font-weight:600;color:var(--azul-oscuro)}
+
+/* Contador de palabras */
+.word-count{margin-top:8px;font-size:.82rem;color:var(--texto-suave);text-align:right}
+.word-count.over{color:#c0392b;font-weight:600}
+
+/* Autoevaluación grid */
+.self-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.self-grid .field{margin-bottom:0}
+
+/* Radios */
+.radio-group{display:flex;gap:14px;margin-top:4px}
+.radio-opt{
+  flex:1;position:relative;
+}
+.radio-opt input{position:absolute;opacity:0}
+.radio-opt label{
+  display:block;text-align:center;padding:13px;border:1.5px solid var(--gris-borde);
+  border-radius:10px;cursor:pointer;font-weight:600;color:var(--texto-suave);
+  transition:all .2s ease;margin:0;
+}
+.radio-opt input:checked + label{
+  border-color:var(--magenta);background:#fbf5f8;color:var(--magenta);
+}
+
+/* Checkbox aceptación */
+.check-field{display:flex;gap:14px;align-items:flex-start}
+.check-field input{
+  width:22px;height:22px;flex-shrink:0;margin-top:2px;accent-color:var(--magenta);cursor:pointer;
+}
+.check-field label{font-size:.96rem;color:var(--texto);font-weight:400;margin:0;cursor:pointer;line-height:1.5}
+
+/* Error inline */
+.error-msg{display:none;color:#c0392b;font-size:.84rem;font-weight:500;margin-top:6px}
+.field.has-error input,
+.field.has-error textarea,
+.field.has-error select,
+.field.has-error .file-drop{border-color:#c0392b}
+.field.has-error .error-msg{display:block}
+
+.conditional{display:none;margin-top:18px}
+.conditional.show{display:block}
+
+.submit-btn{width:100%;margin-top:12px;font-size:1.05rem;padding:18px}
+
+/* Confirmación */
+.confirmation{
+  display:none;text-align:center;max-width:640px;margin:52px auto 0;
+  background:var(--blanco);border-radius:var(--radio);box-shadow:var(--sombra);
+  border:1px solid var(--gris-borde);padding:64px 44px;
+}
+.confirmation.show{display:block;animation:fadeUp .6s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.confirmation .conf-icon{
+  width:78px;height:78px;border-radius:50%;margin:0 auto 26px;
+  background:linear-gradient(135deg,var(--magenta),var(--azul-oscuro));
+  display:flex;align-items:center;justify-content:center;font-size:2.2rem;color:#fff;
+}
+.confirmation h3{font-size:1.8rem;font-weight:800;color:var(--azul-oscuro);margin-bottom:16px}
+.confirmation p{font-size:1.08rem;color:var(--texto-suave);max-width:480px;margin:0 auto}
+
+/* ══════════════════════════════════════════════════════════════
+   SECCIÓN 8 · FAQ (ACCORDION)
+   ══════════════════════════════════════════════════════════════ */
+.faq-wrap{max-width:820px;margin:48px auto 0}
+.faq-item{
+  background:var(--blanco);border:1px solid var(--gris-borde);border-radius:14px;
+  margin-bottom:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.04);
+}
+.faq-q{
+  width:100%;text-align:left;background:none;border:none;cursor:pointer;
+  padding:24px 28px;display:flex;justify-content:space-between;align-items:center;gap:20px;
+  font-family:inherit;font-size:1.08rem;font-weight:600;color:var(--azul-oscuro);
+}
+.faq-q .faq-icon{
+  flex-shrink:0;width:28px;height:28px;border-radius:50%;background:var(--gris-claro);
+  display:flex;align-items:center;justify-content:center;color:var(--magenta);
+  font-size:1.2rem;font-weight:700;transition:transform .3s ease,background .3s ease;
+}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--magenta);color:#fff}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-a p{padding:0 28px 26px;color:var(--texto-suave);font-size:1rem;line-height:1.7}
+
+/* ══════════════════════════════════════════════════════════════
+   SECCIÓN 9 · FOOTER
+   ══════════════════════════════════════════════════════════════ */
+.footer{background:var(--azul-oscuro);color:#fff;padding:64px 0 34px}
+.footer-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:36px}
+.footer-brand h3{font-size:1.6rem;font-weight:800;letter-spacing:-.01em}
+.footer-brand .tag{color:var(--azul-gedyt);font-weight:500;margin-top:6px;font-size:1rem}
+.footer-contact{display:flex;flex-direction:column;gap:10px;font-size:.98rem;color:rgba(255,255,255,.85)}
+.footer-contact a:hover{color:var(--azul-gedyt)}
+.footer-contact .fc-row{display:flex;align-items:center;gap:10px}
+.footer-legal{
+  margin-top:44px;padding-top:26px;border-top:1px solid rgba(255,255,255,.15);
+  font-size:.85rem;color:rgba(255,255,255,.55);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width:1200px){
+  .comp-grid{gap:16px}
+}
+@media (max-width:900px){
+  .expect-grid{grid-template-columns:1fr 1fr}
+  .profile-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:768px){
+  .section{padding:60px 0}
+  .stats-grid{grid-template-columns:1fr;gap:18px;margin:36px 0 32px}
+  .expect-grid{grid-template-columns:1fr}
+  .conditions{padding:32px 26px}
+  .conditions ul{grid-template-columns:1fr}
+  .profile-grid{grid-template-columns:1fr}
+  .comp-grid{grid-template-columns:1fr}
+  /* Timeline vertical en mobile */
+  .timeline{grid-template-columns:1fr;gap:0}
+  .tl-step{text-align:left;padding:0 0 40px 66px;min-height:70px}
+  .tl-num{position:absolute;left:0;top:0;margin:0}
+  .tl-step .tl-line{
+    top:0;left:22px;width:3px;height:100%;
+    background:linear-gradient(180deg,var(--magenta),rgba(139,26,74,.25));
+  }
+  .tl-step:last-child{padding-bottom:0}
+  .form-wrap{padding:32px 22px}
+  .field-row{grid-template-columns:1fr;gap:0}
+  .field-row .field{margin-bottom:22px}
+  .self-grid{grid-template-columns:1fr}
+  .footer-top{flex-direction:column}
+  .hero{min-height:auto;padding:40px 0}
+  .scroll-hint{display:none}
+}
+</style>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     ══ SECCIÓN 1 ══  HERO
+     ══════════════════════════════════════════════════════════════ -->
+<header class="hero" id="inicio">
+  <div class="container">
+    <span class="eyebrow reveal">Convocatoria abierta 2026</span>
+    <h1 class="reveal">Liderá el futuro de la prevención</h1>
+    <p class="subtitle reveal">Fundación GEDYT convoca a personas con trayectoria, redes y compromiso genuino para integrar su Consejo de Administración.</p>
+    <div class="cta-row reveal">
+      <a href="#postulacion" class="btn">Postularme ahora →</a>
+    </div>
+    <div class="hero-note reveal">
+      <span><span class="dot"></span>Mandato de 3 años</span>
+      <span><span class="dot"></span>Rol honorario</span>
+      <span><span class="dot"></span>Convocatoria abierta hasta el 31 de agosto de 2026</span>
+    </div>
+  </div>
+  <div class="scroll-hint"><span>Conocé más</span><span class="arrow"></span></div>
+</header>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     ══ SECCIÓN 2 ══  POR QUÉ IMPORTA
+     ══════════════════════════════════════════════════════════════ -->
+<section class="section" id="por-que">
+  <div class="container">
+    <div class="accent-line reveal"></div>
+    <h2 class="section-title reveal">El cáncer colorrectal es prevenible. Necesitamos a las personas adecuadas.</h2>
+
+    <div class="stats-grid">
+      <div class="stat-card reveal">
+        <div class="num">30.000+</div>
+        <div class="lbl">personas tamizadas</div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="num">12</div>
+        <div class="lbl">provincias con presencia</div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="num">10</div>
+        <div class="lbl">años de trayectoria</div>
+      </div>
+    </div>
+
+    <p class="lead-p reveal">Fundación GEDYT implementa programas de prevención y detección temprana de cáncer colorrectal en todo el país. En esta etapa de crecimiento, estamos reconstituyendo y profesionalizando nuestro Consejo de Administración para acompañar la expansión de nuestro impacto.</p>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     ══ SECCIÓN 3 ══  EL ROL
+     ══════════════════════════════════════════════════════════════ -->
+<section class="section section--gris" id="el-rol">
+  <div class="container">
+    <div class="accent-line reveal"></div>
+    <h2 class="section-title reveal">¿Qué es el Consejo de Administración?</h2>
+    <p class="role-desc reveal">El Consejo de Administración es el órgano de gobierno estratégico de Fundación GEDYT. Sus miembros ejercen liderazgo institucional, supervisión estratégica y contribuyen activamente al crecimiento y posicionamiento de la Fundación.</p>
+
+    <div class="expect-grid">
+      <div class="expect-card reveal">
+        <h3>Presencia estratégica</h3>
+        <p>Participar en decisiones de alto nivel que guían el rumbo de la organización.</p>
+      </div>
+      <div class="expect-card reveal">
+        <h3>Apertura de puertas</h3>
+        <p>Conectar a la Fundación con recursos, alianzas y oportunidades desde tus redes.</p>
+      </div>
+      <div class="expect-card reveal">
+        <h3>Representación</h3>
+        <p>Ser voz de la Fundación en espacios relevantes de salud, empresa o política.</p>
+      </div>
+      <div class="expect-card reveal">
+        <h3>Compromiso real</h3>
+        <p>Dedicación de 4 a 6 horas mensuales en un rol honorario con impacto medible.</p>
+      </div>
+    </div>
+
+    <div class="conditions reveal">
+      <h3>Condiciones del rol</h3>
+      <ul>
+        <li><span class="check">✓</span> Rol honorario, no remunerado</li>
+        <li><span class="check">✓</span> Mandato inicial de 3 años, renovable</li>
+        <li><span class="check">✓</span> Mínimo una reunión anual presencial o virtual</li>
+        <li><span class="check">✓</span> Los miembros actúan a título individual, no como representantes de sus organizaciones</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     ══ SECCIÓN 4 ══  PERFILES BUSCADOS
+     ══════════════════════════════════════════════════════════════ -->
+<section class="section" id="perfiles">
+  <div class="container">
+    <div class="accent-line reveal"></div>
+    <h2 class="section-title reveal">¿A quién buscamos?</h2>
+    <p class="section-sub reveal">Combinamos dos vías: convocatoria abierta e invitación directa. En ambos casos, buscamos lo mismo.</p>
+
+    <div class="profile-grid">
+      <div class="profile-card reveal">
+        <div class="ico">🩺</div>
+        <h3>Líderes en salud pública</h3>
+        <p>Con trayectoria en política sanitaria, sistemas de salud o prevención.</p>
+      </div>
+      <div class="profile-card reveal">
+        <div class="ico">📈</div>
+        <h3>Empresarios y ejecutivos</h3>
+        <p>Con redes corporativas y capacidad de movilizar recursos.</p>
+      </div>
+      <div class="profile-card reveal">
+        <div class="ico">🏛️</div>
+        <h3>Especialistas en gobierno</h3>
+        <p>Con experiencia en relaciones con el Estado nacional o provincial.</p>
+      </div>
+      <div class="profile-card reveal">
+        <div class="ico">🤝</div>
+        <h3>Referentes en filantropía</h3>
+        <p>Con experiencia en fondeo, grants o desarrollo institucional.</p>
+      </div>
+      <div class="profile-card reveal">
+        <div class="ico">💡</div>
+        <h3>Innovadores en tecnología y datos</h3>
+        <p>Con visión de transformación digital en salud.</p>
+      </div>
+      <div class="profile-card reveal">
+        <div class="ico">🌎</div>
+        <h3>Líderes con perspectiva global</h3>
+        <p>Con redes internacionales y experiencia en salud global.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     ══ SECCIÓN 5 ══  COMPETENCIAS
+     ══════════════════════════════════════════════════════════════ -->
+<section class="section section--gris" id="competencias">
+  <div class="container">
+    <div class="accent-line reveal"></div>
+    <h2 class="section-title reveal">Competencias que valoramos</h2>
+    <p class="section-sub reveal">Inspirado en estándares internacionales de gobernanza (modelo C/Can Board of Directors).</p>
+
+    <div class="comp-grid">
+      <div class="comp-card reveal"><div class="cnum">01</div><div><h4>Prevención y salud oncológica</h4><p>Conocimiento del ecosistema de CCR, tamizaje y salud digestiva.</p></div></div>
+      <div class="comp-card reveal"><div class="cnum">02</div><div><h4>Sistemas de salud en Argentina/LATAM</h4><p>Política sanitaria, acceso, calidad y sostenibilidad.</p></div></div>
+      <div class="comp-card reveal"><div class="cnum">03</div><div><h4>Estrategia organizacional</h4><p>Identificación de oportunidades y desarrollo de objetivos de largo plazo.</p></div></div>
+      <div class="comp-card reveal"><div class="cnum">04</div><div><h4>Movilización de recursos</h4><p>Redes para acceder a financiamiento público, privado y filantrópico.</p></div></div>
+      <div class="comp-card reveal"><div class="cnum">05</div><div><h4>Gobernanza de fundaciones</h4><p>Conocimiento de OSC, compliance y marcos legales.</p></div></div>
+      <div class="comp-card reveal"><div class="cnum">06</div><div><h4>Asuntos gubernamentales</h4><p>Relaciones con el Estado en salud o desarrollo social.</p></div></div>
+      <div class="comp-card reveal"><div class="cnum">07</div><div><h4>Comunicación e incidencia</h4><p>Vocería, advocacy y posicionamiento en políticas públicas.</p></div></div>
+      <div class="comp-card reveal"><div class="cnum">08</div><div><h4>Finanzas y gestión</h4><p>Supervisión financiera y evaluación de desempeño en organizaciones sin fines de lucro.</p></div></div>
+      <div class="comp-card reveal"><div class="cnum">09</div><div><h4>Alianzas público-privadas</h4><p>Experiencia en partnerships entre sectores.</p></div></div>
+      <div class="comp-card reveal"><div class="cnum">10</div><div><h4>Equidad y género en salud</h4><p>Enfoque de equidad, diversidad e inclusión en programas de salud.</p></div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     ══ SECCIÓN 6 ══  PROCESO
+     ══════════════════════════════════════════════════════════════ -->
+<section class="section" id="proceso">
+  <div class="container">
+    <div class="accent-line reveal"></div>
+    <h2 class="section-title reveal">¿Cómo es el proceso?</h2>
+
+    <div class="timeline">
+      <div class="tl-step reveal">
+        <div class="tl-line"></div>
+        <div class="tl-num">1</div>
+        <h4>Postulación abierta</h4>
+        <div class="tl-date">hasta el 31 de agosto de 2026</div>
+      </div>
+      <div class="tl-step reveal">
+        <div class="tl-line"></div>
+        <div class="tl-num">2</div>
+        <h4>Revisión de candidaturas</h4>
+        <div class="tl-date">septiembre 2026</div>
+      </div>
+      <div class="tl-step reveal">
+        <div class="tl-line"></div>
+        <div class="tl-num">3</div>
+        <h4>Entrevistas con candidatos seleccionados</h4>
+        <div class="tl-date">septiembre / octubre 2026</div>
+      </div>
+      <div class="tl-step reveal">
+        <div class="tl-line"></div>
+        <div class="tl-num">4</div>
+        <h4>Incorporación al Consejo</h4>
+        <div class="tl-date">octubre 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     ══ SECCIÓN 7 ══  FORMULARIO DE POSTULACIÓN
+     ══════════════════════════════════════════════════════════════ -->
+<section class="section section--gris" id="postulacion">
+  <div class="container">
+    <div class="accent-line reveal" style="margin-left:auto;margin-right:auto"></div>
+    <h2 class="section-title reveal" style="text-align:center;margin:0 auto">Postulate al Consejo de Administración</h2>
+    <p class="section-sub reveal" style="text-align:center;margin-left:auto;margin-right:auto">Completá el formulario. Nos contactaremos con todos los postulantes.</p>
+
+    <!-- FORMULARIO -->
+    <form class="form-wrap reveal" id="applyForm" action="mailto:consejo@fundaciongedyt.org.ar" method="post" enctype="text/plain" novalidate>
+
+      <!-- Bloque: Datos personales -->
+      <div class="form-block">
+        <div class="form-block-title">Datos personales</div>
+        <div class="field-row">
+          <div class="field">
+            <label for="nombre">Nombre <span class="req">*</span></label>
+            <input type="text" id="nombre" name="nombre" required>
+            <div class="error-msg">Ingresá tu nombre.</div>
+          </div>
+          <div class="field">
+            <label for="apellido">Apellido <span class="req">*</span></label>
+            <input type="text" id="apellido" name="apellido" required>
+            <div class="error-msg">Ingresá tu apellido.</div>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="email">Email <span class="req">*</span></label>
+            <input type="email" id="email" name="email" required>
+            <div class="error-msg">Ingresá un email válido.</div>
+          </div>
+          <div class="field">
+            <label for="telefono">Teléfono <span class="req">*</span></label>
+            <input type="tel" id="telefono" name="telefono" required>
+            <div class="error-msg">Ingresá tu teléfono.</div>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="organizacion">Organización actual <span class="req">*</span></label>
+            <input type="text" id="organizacion" name="organizacion" required>
+            <div class="error-msg">Ingresá tu organización actual.</div>
+          </div>
+          <div class="field">
+            <label for="ubicacion">País / Provincia <span class="req">*</span></label>
+            <input type="text" id="ubicacion" name="ubicacion" required>
+            <div class="error-msg">Ingresá tu país o provincia.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bloque: Tu postulación -->
+      <div class="form-block">
+        <div class="form-block-title">Tu postulación</div>
+        <div class="field">
+          <label>CV (PDF, máx. 5&nbsp;MB) <span class="req">*</span></label>
+          <label class="file-drop" id="fileDrop" for="cv">
+            <div class="fd-icon">📎</div>
+            <div class="fd-text"><strong>Subí tu CV</strong> o arrastralo aquí · PDF hasta 5&nbsp;MB</div>
+            <div class="fd-name" id="fileName" style="display:none"></div>
+            <input type="file" id="cv" name="cv" accept="application/pdf,.pdf" required>
+          </label>
+          <div class="error-msg">Adjuntá tu CV en PDF (máx. 5&nbsp;MB).</div>
+        </div>
+        <div class="field">
+          <label for="declaracion">Declaración personal <span class="req">*</span></label>
+          <textarea id="declaracion" name="declaracion" required placeholder="¿Por qué querés integrar el Consejo de Fundación GEDYT? ¿Qué aportás desde tu trayectoria y redes? (máximo 500 palabras)"></textarea>
+          <div class="word-count" id="wordCount">0 / 500 palabras</div>
+          <div class="error-msg">Escribí tu declaración personal.</div>
+        </div>
+      </div>
+
+      <!-- Bloque: Autoevaluación de competencias -->
+      <div class="form-block">
+        <div class="form-block-title">Autoevaluación de competencias</div>
+        <p style="font-size:.96rem;color:var(--texto-suave);margin-bottom:22px">Valorá tu nivel de experiencia en cada área (Novato → Experto).</p>
+        <div class="self-grid" id="selfGrid">
+          <!-- Los 10 selects se generan por JS para mantener el HTML limpio -->
+        </div>
+      </div>
+
+      <!-- Bloque: Integridad -->
+      <div class="form-block">
+        <div class="form-block-title">Integridad</div>
+        <div class="field">
+          <label>¿Tenés algún conflicto de interés que declarar? <span class="req">*</span></label>
+          <div class="radio-group">
+            <div class="radio-opt">
+              <input type="radio" id="conflicto-si" name="conflicto" value="Sí" required>
+              <label for="conflicto-si">Sí</label>
+            </div>
+            <div class="radio-opt">
+              <input type="radio" id="conflicto-no" name="conflicto" value="No" required>
+              <label for="conflicto-no">No</label>
+            </div>
+          </div>
+          <div class="error-msg">Indicá si tenés conflictos de interés.</div>
+          <div class="conditional" id="conflictoDetalle">
+            <div class="field" style="margin-top:0">
+              <label for="conflictoTexto">Por favor explicá brevemente</label>
+              <textarea id="conflictoTexto" name="conflictoTexto" style="min-height:100px"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bloque: Aceptación -->
+      <div class="form-block">
+        <div class="form-block-title">Aceptación</div>
+        <div class="field">
+          <div class="check-field">
+            <input type="checkbox" id="acepto" name="acepto" required>
+            <label for="acepto">Leí y acepto los Términos de Referencia del Consejo de Administración de Fundación GEDYT. <span class="req">*</span></label>
+          </div>
+          <div class="error-msg">Debés aceptar los Términos de Referencia para continuar.</div>
+        </div>
+      </div>
+
+      <button type="submit" class="btn submit-btn">Enviar mi postulación</button>
+    </form>
+
+    <!-- Confirmación (oculta hasta submit OK) -->
+    <div class="confirmation" id="confirmation">
+      <div class="conf-icon">✓</div>
+      <h3>¡Gracias por postularte!</h3>
+      <p>Recibimos tu postulación. Revisaremos tu perfil y nos contactaremos antes del 15 de septiembre de 2026.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     ══ SECCIÓN 8 ══  PREGUNTAS FRECUENTES
+     ══════════════════════════════════════════════════════════════ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="accent-line reveal"></div>
+    <h2 class="section-title reveal">Preguntas frecuentes</h2>
+
+    <div class="faq-wrap">
+      <div class="faq-item reveal">
+        <button class="faq-q" type="button">¿El rol es pago?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>No. Es un rol honorario y voluntario. Los miembros del Consejo no reciben remuneración.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" type="button">¿Cuánto tiempo requiere?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>Entre 4 y 6 horas mensuales en promedio, incluyendo reuniones, lectura de materiales y participación en comisiones.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" type="button">¿Necesito ser del sector salud?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>No. Buscamos diversidad de perfiles: salud, empresa, gobierno, filantropía, tecnología y sociedad civil.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" type="button">¿Puedo postularme si vivo fuera de Argentina?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>Sí. Valoramos especialmente perfiles con perspectiva internacional y redes globales.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" type="button">¿Cuándo vence la convocatoria?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>El plazo de postulación cierra el 31 de agosto de 2026.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     ══ SECCIÓN 9 ══  FOOTER
+     ══════════════════════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3>Fundación GEDYT</h3>
+        <div class="tag">Prevención del Cáncer Colorrectal</div>
+      </div>
+      <div class="footer-contact">
+        <div class="fc-row">✉️ <a href="mailto:consejo@fundaciongedyt.org.ar">consejo@fundaciongedyt.org.ar</a></div>
+        <div class="fc-row">🌐 <a href="https://fundaciongedyt.org.ar" target="_blank" rel="noopener">fundaciongedyt.org.ar</a></div>
+      </div>
+    </div>
+    <div class="footer-legal">Fundación GEDYT — Todos los derechos reservados 2026</div>
+  </div>
+</footer>
+
+
+<script>
+/* ══════════════════════════════════════════════════════════════
+   ══ JS ══  Toda la interactividad · Vanilla, sin dependencias
+   ══════════════════════════════════════════════════════════════ */
+(function(){
+  'use strict';
+
+  /* ── 1. Animaciones de entrada (IntersectionObserver) ── */
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  },{threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  /* ── 2. Generar los 10 selects de autoevaluación ── */
+  var competencias = [
+    'Prevención y salud oncológica',
+    'Sistemas de salud en Argentina/LATAM',
+    'Estrategia organizacional',
+    'Movilización de recursos',
+    'Gobernanza de fundaciones',
+    'Asuntos gubernamentales',
+    'Comunicación e incidencia',
+    'Finanzas y gestión',
+    'Alianzas público-privadas',
+    'Equidad y género en salud'
+  ];
+  var niveles = ['Novato','Principiante','Competente','Avanzado','Experto'];
+  var selfGrid = document.getElementById('selfGrid');
+  competencias.forEach(function(comp, i){
+    var n = (i+1<10?'0':'')+(i+1);
+    var field = document.createElement('div');
+    field.className = 'field';
+    var opts = '<option value="" disabled selected>Seleccioná tu nivel</option>' +
+      niveles.map(function(nv){ return '<option value="'+nv+'">'+nv+'</option>'; }).join('');
+    field.innerHTML =
+      '<label for="comp'+(i+1)+'">'+n+' · '+comp+'</label>' +
+      '<select id="comp'+(i+1)+'" name="comp_'+(i+1)+'">'+opts+'</select>';
+    selfGrid.appendChild(field);
+  });
+
+  /* ── 3. Contador de palabras (declaración personal) ── */
+  var declaracion = document.getElementById('declaracion');
+  var wordCount = document.getElementById('wordCount');
+  var MAX_WORDS = 500;
+  function countWords(str){
+    var t = str.trim();
+    if(!t) return 0;
+    return t.split(/\s+/).length;
+  }
+  declaracion.addEventListener('input', function(){
+    var w = countWords(declaracion.value);
+    wordCount.textContent = w + ' / ' + MAX_WORDS + ' palabras';
+    wordCount.classList.toggle('over', w > MAX_WORDS);
+  });
+
+  /* ── 4. Upload de archivo: mostrar nombre + validar tamaño ── */
+  var cv = document.getElementById('cv');
+  var fileName = document.getElementById('fileName');
+  var MAX_BYTES = 5 * 1024 * 1024;
+  cv.addEventListener('change', function(){
+    if(cv.files && cv.files[0]){
+      fileName.textContent = '📄 ' + cv.files[0].name;
+      fileName.style.display = 'block';
+    } else {
+      fileName.style.display = 'none';
+    }
+  });
+
+  /* ── 5. Radio conflicto de interés → textarea condicional ── */
+  var conflictoDetalle = document.getElementById('conflictoDetalle');
+  document.querySelectorAll('input[name="conflicto"]').forEach(function(r){
+    r.addEventListener('change', function(){
+      conflictoDetalle.classList.toggle('show', this.value === 'Sí');
+    });
+  });
+
+  /* ── 6. Helpers de validación ── */
+  function fieldOf(el){ return el.closest('.field'); }
+  function setError(el, on){
+    var f = fieldOf(el);
+    if(f) f.classList.toggle('has-error', on);
+  }
+  function isEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+
+  /* ── 7. Submit: validación client-side ── */
+  var form = document.getElementById('applyForm');
+  form.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var ok = true;
+    var firstError = null;
+
+    function fail(el){ setError(el, true); ok = false; if(!firstError) firstError = el; }
+
+    // Campos de texto/email/tel requeridos
+    ['nombre','apellido','telefono','organizacion','ubicacion'].forEach(function(id){
+      var el = document.getElementById(id);
+      if(!el.value.trim()) fail(el); else setError(el, false);
+    });
+
+    // Email con formato
+    var emailEl = document.getElementById('email');
+    if(!isEmail(emailEl.value.trim())) fail(emailEl); else setError(emailEl, false);
+
+    // CV: requerido + tamaño
+    if(!cv.files || !cv.files[0] || cv.files[0].size > MAX_BYTES){ fail(cv); }
+    else setError(cv, false);
+
+    // Declaración: requerida
+    if(!declaracion.value.trim()){ fail(declaracion); } else setError(declaracion, false);
+
+    // Conflicto: radio seleccionado
+    var conflicto = form.querySelector('input[name="conflicto"]:checked');
+    if(!conflicto){ fail(document.getElementById('conflicto-si')); }
+    else setError(document.getElementById('conflicto-si'), false);
+
+    // Aceptación: checkbox
+    var acepto = document.getElementById('acepto');
+    if(!acepto.checked){ fail(acepto); } else setError(acepto, false);
+
+    if(!ok){
+      if(firstError && firstError.scrollIntoView){
+        firstError.scrollIntoView({behavior:'smooth', block:'center'});
+        if(firstError.focus) try{ firstError.focus({preventScroll:true}); }catch(e){ firstError.focus(); }
+      }
+      return;
+    }
+
+    // OK → ocultar formulario y mostrar confirmación
+    form.style.display = 'none';
+    var conf = document.getElementById('confirmation');
+    conf.classList.add('show');
+    conf.scrollIntoView({behavior:'smooth', block:'center'});
+
+    // (Placeholder) En producción, aquí se dispararía el envío real / mailto.
+    // form.submit();
+  });
+
+  // Limpiar error de un campo al corregirlo
+  form.addEventListener('input', function(e){
+    if(e.target.closest('.field')) setError(e.target, false);
+  });
+  form.addEventListener('change', function(e){
+    if(e.target.name === 'conflicto') setError(document.getElementById('conflicto-si'), false);
+    if(e.target.id === 'acepto') setError(e.target, false);
+    if(e.target.id === 'cv') setError(e.target, false);
+  });
+
+  /* ── 8. Accordion FAQ ── */
+  document.querySelectorAll('.faq-q').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item = btn.closest('.faq-item');
+      var answer = item.querySelector('.faq-a');
+      var isOpen = item.classList.contains('open');
+
+      // Cerrar todos (accordion clásico)
+      document.querySelectorAll('.faq-item.open').forEach(function(openItem){
+        openItem.classList.remove('open');
+        openItem.querySelector('.faq-a').style.maxHeight = null;
+      });
+
+      if(!isOpen){
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+
+})();
+</script>

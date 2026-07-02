@@ -102,6 +102,7 @@ a{color:inherit;text-decoration:none}
   pointer-events:none;
 }
 .hero .container{position:relative;z-index:2;padding-top:80px;padding-bottom:80px}
+.hero-logo{height:56px;width:auto;margin-bottom:34px}
 .hero .eyebrow{color:#f0c4d5}
 .hero h1{
   font-size:clamp(2.4rem,6.2vw,4.4rem);font-weight:800;line-height:1.05;
@@ -392,7 +393,8 @@ a{color:inherit;text-decoration:none}
 .footer{background:var(--azul-oscuro);color:#fff;padding:64px 0 34px}
 .footer-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:36px}
 .footer-brand h3{font-size:1.6rem;font-weight:800;letter-spacing:-.01em}
-.footer-brand .tag{color:var(--azul-gedyt);font-weight:500;margin-top:6px;font-size:1rem}
+.footer-logo{height:48px;width:auto;display:block}
+.footer-brand .tag{color:var(--azul-gedyt);font-weight:500;margin-top:14px;font-size:1rem}
 .footer-contact{display:flex;flex-direction:column;gap:10px;font-size:.98rem;color:rgba(255,255,255,.85)}
 .footer-contact a:hover{color:var(--azul-gedyt)}
 .footer-contact .fc-row{display:flex;align-items:center;gap:10px}
@@ -434,6 +436,8 @@ a{color:inherit;text-decoration:none}
   .self-grid{grid-template-columns:1fr}
   .footer-top{flex-direction:column}
   .hero{min-height:auto;padding:40px 0}
+  .hero-logo{height:42px;margin-bottom:26px}
+  .footer-logo{height:40px}
   .scroll-hint{display:none}
 }
 </style>
@@ -444,6 +448,7 @@ a{color:inherit;text-decoration:none}
      ══════════════════════════════════════════════════════════════ -->
 <header class="hero" id="inicio">
   <div class="container">
+    <img src="FG-blanco.png" alt="Fundación GEDYT" class="hero-logo reveal">
     <span class="eyebrow reveal">Convocatoria abierta 2026 · Consejo Directivo</span>
     <h1 class="reveal">Integrá el Consejo Directivo de Fundación GEDYT</h1>
     <p class="subtitle reveal">Convocamos a personas con trayectoria, redes y compromiso genuino para integrar el órgano de gobierno que conduce la estrategia de la Fundación y el futuro de la prevención del cáncer colorrectal.</p>
@@ -807,7 +812,7 @@ a{color:inherit;text-decoration:none}
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <h3>Fundación GEDYT</h3>
+        <img src="FG-blanco.png" alt="Fundación GEDYT" class="footer-logo">
         <div class="tag">Prevención del Cáncer Colorrectal</div>
       </div>
       <div class="footer-contact">
